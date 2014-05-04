@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="60px" viewBox="0 0 64 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="new-important" sketch:type="MSLayerGroup">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <path d="M32,0 C14.3266796,0 0,11.7621088 0,26.2713134 C0,34.7078924 4.8448932,42.2146683 12.3740583,47.0214662 C14.688,52.8628424 9.4841165,57.8226184 3.99533981,59.1557132 C10.0535922,59.6825344 20.8239223,58.8297629 28.9923107,52.4262271 C47.9120777,53.8751017 64,41.6551436 64,26.2713134 C64,11.7621088 49.6730097,0 32,0 L32,0 L32,0 Z" id="Topic" fill="#CCCCCC"></path>
+                <path d="M27.8583573,11.1474854 L36.1418524,11.1474854 L34.044765,30.0066068 L29.9554447,30.0066068 L27.8583573,11.1474854 L27.8583573,11.1474854 Z M32.0001049,39.202568 C30.2797592,39.202568 28.8850913,37.8465388 28.8850913,36.1740825 C28.8850913,34.5014223 30.2797592,33.1455971 32.0001049,33.1455971 C33.7204505,33.1455971 35.1151184,34.5014223 35.1151184,36.1740825 C35.1151184,37.8465388 33.7204505,39.202568 32.0001049,39.202568 L32.0001049,39.202568 L32.0001049,39.202568 Z" id="warning-2-icon" fill="#82323E"></path>
+            </g>
+        </g>
+    </g>
+</svg>

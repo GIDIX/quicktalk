@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Default Avatar</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Additional" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Default-Avatar" sketch:type="MSArtboardGroup">
+            <rect id="Background" fill="#EEEEEE" sketch:type="MSShapeGroup" x="0" y="0" width="256" height="256"></rect>
+            <g id="Colored-Forlight" sketch:type="MSLayerGroup" transform="translate(46.000000, 46.000000)" fill="#CCCCCC">
+                <path d="M81.96721,0 L152.952896,40.8291841 L152.952896,122.487552 L81.96721,163.316737 L10.9815239,122.487552 L10.9815239,40.8291841 L81.96721,0 Z M81.96721,34.4496241 L123.00581,58.0539962 L123.00581,105.26274 L81.96721,128.867112 L40.9286102,105.26274 L40.9286102,58.0539962 L81.96721,34.4496241 Z" id="Main-Polygon" sketch:type="MSShapeGroup"></path>
+                <polygon id="Accent" sketch:type="MSShapeGroup" points="152.952896 122.487552 81.96721 163.316737 81.9672098 81.7498079 "></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
