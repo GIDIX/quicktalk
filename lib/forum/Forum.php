@@ -310,18 +310,18 @@
 		 * @return array Array containing topics and pages.
 		 */
 		public function getTopics($pageLimit = 20, $currentPage = 1) {
-			global $db, $user;
+			global $db, $user, $userManager;
 
 			$resMeta = $db->query("SELECT * FROM ".TABLE_TOPICS." WHERE forum_id = ?", array($this->id));
 
 			$page = (isset($currentPage)) ? max($currentPage, 1) : 1;
 			$pages = ceil($db->numRows($resMeta) / $pageLimit);
 
-			if ($user->loggedIn()) {
+			if ($userManager->loggedIn()) {
 				$res = $db->query("
 					SELECT *
 					FROM ".TABLE_TOPICS." AS topics
-					LEFT JOIN forums_topics_track AS t
+					LEFT JOIN ".TABLE_TOPICS_TRACK." AS t
 						ON t.topic_id = topics.id AND t.user_id = :uid
 					WHERE topics.forum_id = :id
 					ORDER BY topics.topic_important DESC, last_post_time DESC

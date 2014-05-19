@@ -25,7 +25,7 @@
 		}
 
 		private static function getTopicURL(ForumTopic $t) {
-			return './viewtopic.php?id=' . $f->getID();
+			return './viewtopic.php?id=' . $t->getID();
 		}
 
 		private static function getPostURL(ForumPost $p) {

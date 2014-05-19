@@ -88,12 +88,14 @@
 		}
 
 		protected function error($msg, $sql, $code) {
-			die('
+			Functions::log(Functions::LOG_ERROR, $msg . '<br /><br /><code class="important">' . $sql . '</code>');
+			
+			/* die('
 				<h1>Database Error ('.$code.')</h1>
 
 				'.(!is_null($sql) ? '<code>' . $sql . '</code>' : '').'
 				<p>'.$msg.'</p>
-			');
+			'); */
 		}
 	}
 ?>

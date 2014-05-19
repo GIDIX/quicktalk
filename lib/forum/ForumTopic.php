@@ -263,7 +263,7 @@
 		}
 
 		public function getPosts($pageLimit = 0, $currentPage = 1) {
-			global $db, $user;
+			global $db, $user, $userManager;
 
 			if ($pageLimit == 0) {
 				$pageLimit = Config::get('max_posts_perpage');
@@ -274,7 +274,7 @@
 			$page = (isset($currentPage)) ? max($currentPage, 1) : 1;
 			$pages = ceil($db->numRows($resMeta) / $pageLimit);
 
-			if ($user->loggedIn()) {
+			if ($userManager->loggedIn()) {
 				$res = $db->query("
 					SELECT posts.*, track.mark_time
 					FROM ".TABLE_POSTS." AS posts

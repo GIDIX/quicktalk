@@ -1,6 +1,10 @@
 $accent: #82323E;
-$matchBlue: #41454C;
+$accentedBG: #41454C;
 $lightBlue: #A6AEBD;
+
+$accent: #cb0036;
+$accentedBG: hsl(hue($accent), 2%, 19%);
+$lightBlue: hsl(hue(#17a), 5%, 70%);
 
 $standard-font: Segoe UI, sans-serif;
 
@@ -67,7 +71,7 @@ b, strong {
 }
 
 #header_wrap {
-	background: $matchBlue;
+	background: $accentedBG;
 	border-bottom: 2px solid $accent;
 	color: #fff;
 
@@ -105,7 +109,7 @@ b, strong {
 
 		.avatar {
 			@include cell(middle, 52px);
-			background: lighten($matchBlue, 10%);
+			background: lighten($accentedBG, 10%);
 			text-align: right;
 
 			img {
@@ -144,7 +148,7 @@ b, strong {
 						padding-right: 0px;
 						padding-top: 10px;
 						padding-bottom: 10px;
-						color: $matchBlue;
+						color: $accentedBG;
 						text-decoration: none;
 
 						&:hover, &.active {
@@ -221,7 +225,7 @@ footer {
 				display: block;
 				font-size: 21px;
 				font-weight: 300;
-				color: $matchBlue;
+				color: $accentedBG;
 				margin-bottom: 2px;
 				text-transform: none;
 			}
@@ -449,7 +453,7 @@ a.button, input[type=submit] {
 	font-size: 12px;
 
 	background: {
-		color: $matchBlue;
+		color: $accentedBG;
 		image: url(../../images/icons/info/info.svg);
 		repeat: no-repeat;
 		position: 20px center;

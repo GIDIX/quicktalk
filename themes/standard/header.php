@@ -8,43 +8,42 @@
 	</head>
 
 	<body>
+		<div id="aside_wrap">
+			<aside>
+				<div class="tab">
+					<div class="userinfo">
+						<?php if (ThemeFunctions::loggedIn()): ?>
+							<b><?php echo $user->getUsername(); ?></b>
+
+							<a href="./user.php?id=<?php echo $user->getUserID(); ?>">My Profile</a>
+							<a href="./settings.php">Settings</a>
+							<a href="./login.php?logout=1">Logout</a>
+						<?php else: ?>
+							<b>Welcome, Guest.</b>
+
+							<span class="links">
+								<a href="./login.php">Log in</a>
+								<a href="./register.php">Register</a>
+							</span>
+						<?php endif; ?>
+					</div>
+
+					<div class="avatar">
+						<img src="<?php echo ThemeFunctions::getUserAvatar(); ?>" alt="Avatar" />
+					</div>
+				</div>
+			</aside>
+		</div>
+
 		<div id="header_wrap">
 			<header>
 				<div class="logo">
-					<img src="/images/quicktalk/wide_forlight.svg" alt="<?php echo Templates::getVar('pageTitle'); ?>" />
+					<img src="/images/quicktalk/wide_translucent_fordark.svg" alt="<?php echo Templates::getVar('pageTitle'); ?>" />
 				</div>
 
 				<nav>
 					<?php echo ThemeFunctions::getNavigation(); ?>
 				</nav>
-
-				<div class="user">
-					<div class="tab">
-						<div class="username">
-							<?php if (ThemeFunctions::loggedIn()): ?>
-								<?php echo $user->getUsername(); ?>
-								<span class="rsaquo">&rsaquo;</span>
-
-								<ul>
-									<li><a href="./user.php?id=<?php echo $user->getUserID(); ?>">My Profile</a></li>
-									<li><a href="./settings.php">Settings</a></li>
-									<li><a href="./login.php?logout=1">Logout</a>
-								</ul>
-							<?php else: ?>
-								Welcome, Guest.
-
-								<span class="links">
-									<a href="./login.php">Log in</a> or
-									<a href="./register.php">Register</a>
-								</span>
-							<?php endif; ?>
-						</div>
-
-						<div class="avatar">
-							<img src="<?php echo ThemeFunctions::getUserAvatar(); ?>" alt="Avatar" />
-						</div>
-					</div>
-				</div>
 			</header>
 		</div>
 

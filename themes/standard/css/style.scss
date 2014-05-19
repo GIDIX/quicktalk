@@ -1,5 +1,10 @@
-$accent: #82323E;
+$accent: #82323E; // Old Red
+$accent: #cb0036; // Pink
+// $accent: #00767d; // Turqoise
+// $accent: #00b790;
 $matchBlue: #41454C;
+$accentedBG: #292c34;
+$accentedBG: hsl(hue($accent), 2%, 19%);
 
 $standard-font: Segoe UI, sans-serif;
 
@@ -39,7 +44,7 @@ $standard-font: Segoe UI, sans-serif;
 // ACTUAL STYLE
 
 body {
-	background: #fbfbfb;
+	background: #fff;
 	font-family: $standard-font;
 	font-size: 13px;
 	@include mp0;
@@ -50,11 +55,15 @@ body {
 a {
 	color: $accent;
 	text-decoration: none;
-	transform: color 0.2s;
+	transition: all 0.2s;
 
 	&:hover {
 		color: #7b7b7b;
 	}
+}
+
+b {
+	font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,8 +79,9 @@ h1, h2 {
 #header_wrap {
 	@include border-box;
 
-	background: #fff;
-	border-bottom: 3px solid $matchBlue;
+	background: $accentedBG;
+	border-top: 1px solid lighten($accentedBG, 7%);
+	border-bottom: 2px solid $accent;
 	position: fixed;
 	width: 100%;
 
@@ -85,7 +95,7 @@ h1, h2 {
 			font-size: 21px;
 
 			img {
-				padding-top: 7px;
+				padding-top: 5px;
 				max-height: 35px;
 				max-width: 150px;
 			}
@@ -93,6 +103,7 @@ h1, h2 {
 
 		nav {
 			@include cell(middle, auto);
+			padding-left: 8px;
 		
 			ul {
 				@include ulreset;
@@ -102,23 +113,28 @@ h1, h2 {
 
 					a {
 						display: block;
+						text-transform: uppercase;
 
 						padding: {
-							left: 26px;
-							right: 26px;
-							top: 18px;
-							bottom: 18px;
+							left: 12px;
+							right: 12px;
+							top: 26px;
+							bottom: 22px;
 						}
 
-						font-size: 14px;
-						color: $accent;
+						margin-right: 12px;
+						margin-bottom: -2px;
+
+						font-size: 13px;
+						color: #fff;
+						border-bottom: 4px solid transparent;
 					}
 
 					&:hover a, &:hover a.active {
-						border-bottom: 3px solid $accent;
-						color: #fff;
-						background: $accent;
-						margin-bottom: -3px;
+						border-bottom: 4px solid #fff;
+						font-weight: 600;
+						// background: darken($accentedBG, 4%);
+						// box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.1);
 					}
 
 					ul {
@@ -151,82 +167,54 @@ h1, h2 {
 				}
 			}
 		}
+	}
+}
 
-		.user {
-			@include cell(middle, 195px);
+#aside_wrap {
+	background: darken($accentedBG, 4%);
 
-			.tab {
-				@include table;
+	aside {
+		width: 1000px;
+		margin: auto;
 
-				.username {
-					@include cell(middle, auto);
-					text-align: right;
-					color: #999;
-					padding-right: 27px;
-					height: 49px;
-					cursor: pointer;
+		.tab {
+			@include table;
 
-					.links {
-						display: block;
+			.userinfo {
+				@include cell(middle, auto);
+				text-align: right;
+				color: lighten($accentedBG, 72%);
+				padding-right: 12px;
+				height: 36px;
+				padding-bottom: 2px;
 
-						a {
-							display: inline;
-						}
-					}
-
-					.rsaquo {
-						position: absolute;
-						font-size: 14px;
-						margin-left: 5px;
-						margin-top: 1px;
-						@include transform(rotateZ(90deg));
-					}
-
-					ul {
-						@include ulreset;
-						display: none;
-						position: absolute;
-						background: #fff;
-						border: 1px solid #e0e0e0;
-						border-top: 0;
-						width: 120px;
-						margin-top: 17px;
-						margin-left: 9px;
-
-						li {
-							display: block;
-
-							a {
-								display: block;
-								line-height: 35px;
-								height: 35px;
-								padding-left: 20px;
-								padding-right: 20px;
-
-								&:hover {
-									background: #f6f6f6;
-									color: #999;
-								}
-							}
-						}
-					}
-
-					&:hover {
-						ul {
-							display: block;
-						}	
-					}
+				b {
+					display: inline-block;
+					vertical-align: middle;
+					padding-right: 16px;
+					border-right: 1px solid lighten($accentedBG, 8%);
 				}
 
-				.avatar {
-					@include cell(middle, 55px);
+				a {
+					vertical-align: middle;
+					display: inline-block;
+					margin-left: 10px;
+					margin-right: 8px;
+					color: lighten($accentedBG, 50%);
 
-					img {
-						width: 56px;
-						height: 56px;
-						margin-top: -8px;
-						margin-bottom: -10px;
+					&:hover {
+						color: #fff;
 					}
+				}
+			}
+
+			.avatar {
+				@include cell(middle, 32px);
+
+				img {
+					margin-top: 3px;
+					width: 32px;
+					height: 32px;
 				}
 			}
 		}
@@ -244,7 +232,7 @@ footer {
 	@include table;
 	width: 1000px;
 	margin: auto;
-	border-top: 1px solid #e0e0e0;
+	border-top: 1px solid #eee;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-size: 11px;
@@ -328,7 +316,7 @@ a.button, input[type=submit] {
 	}
 
 	&.darkB {
-		$color: #444;
+		$color: $accentedBG;
 
 		background: $color;
 
@@ -364,9 +352,9 @@ a.button, input[type=submit] {
 	margin-top: 64px;
 	margin-bottom: 64px;
 	padding: 32px;
-	background: #fff;
+	background: #fdfdfd;
 	border-radius: 2px;
-	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+	border: 1px solid #f3f3f3;
 
 	h1 {
 		text-align: center;
@@ -398,7 +386,17 @@ a.button, input[type=submit] {
 	.forums, .topics {
 		margin-top: 20px;
 		border-radius: 2px;
-		box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+		border: 1px solid #eee;
+
+		.nothing {
+			text-align: center;
+			padding: 20px;
+
+			h2 {
+				@include mp0;
+				color: #999;
+			}
+		}
 
 		.forum, .topic {
 			@include table;
@@ -455,13 +453,56 @@ a.button, input[type=submit] {
 			}
 		}
 	}
+
+	#topic {
+		.post.first {
+			.meta {
+				@include table;
+				border-bottom: 1px solid #eee;
+				padding-bottom: 16px;
+				padding-top: 16px;
+
+				.avatar {
+					@include cell(middle, 64px);
+
+					img {
+						width: 64px;
+						height: 64px;
+					}
+				}
+
+				.userinfo {
+					@include cell(middle, auto);
+					padding-left: 20px;
+
+					h2 {
+						@include mp0;
+						margin-top: -7px;
+					}
+
+					time {
+						color: #999;
+						font-size: 12px;
+					}
+				}
+			}
+
+			.content {
+				padding: 20px;
+			}
+		}
+
+		.post.other {
+
+		}
+	}
 }
 
 #profile {
-	margin-top: -70px;
+	margin-top: -58px;
 
 	.profile_header_wrap {
-		background: $matchBlue;
+		background: darken($accentedBG, 4%);
 
 		header {
 			@include table;
@@ -474,6 +515,7 @@ a.button, input[type=submit] {
 				@include cell(middle, 150px);
 
 				img {
+					margin-top: 2px;
 					max-width: 150px;
 					max-height: 150px;
 				}
@@ -503,7 +545,7 @@ a.button, input[type=submit] {
 
 	background: {
 		color: $accented-BG;
-		image: url(../images/icons/info/info.svg);
+		image: url(../../../images/icons/info/info.svg);
 		repeat: no-repeat;
 		position: 20px center;
 	}
@@ -515,7 +557,7 @@ a.button, input[type=submit] {
 	&.error {
 		background: {
 			color: #cc0000;
-			image: url(../images/icons/info/error.svg);
+			image: url(../../../images/icons/info/error.svg);
 			position: 13px center;
 		}
 	}
@@ -523,7 +565,7 @@ a.button, input[type=submit] {
 	&.question {
 		background: {
 			color: #ffaa00;
-			image: url(../images/icons/info/question.svg);
+			image: url(../../../images/icons/info/question.svg);
 			position: 17.5px center;
 		}
 	}
@@ -531,7 +573,7 @@ a.button, input[type=submit] {
 	&.success {
 		background: {
 			color: #669900;
-			image: url(../images/icons/info/success.svg);
+			image: url(../../../images/icons/info/success.svg);
 			position: 13px center;
 		}
 	}
@@ -539,7 +581,7 @@ a.button, input[type=submit] {
 	&.special {
 		background: {
 			color: $accent;
-			image: url(../images/icons/info/special.svg);
+			image: url(../../../images/icons/info/special.svg);
 			position: 17.5px center;
 		}
 
@@ -556,7 +598,7 @@ a.button, input[type=submit] {
 	&.special-alt {
 		background: {
 			color: $accent;
-			image: url(../images/icons/info/special.alt.svg);
+			image: url(../../../images/icons/info/special.alt.svg);
 			position: 13px center;
 		}
 	}
