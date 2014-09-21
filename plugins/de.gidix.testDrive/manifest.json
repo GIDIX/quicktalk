@@ -1,0 +1,8 @@
+{
+	"title":"TestDrive",
+	"description":"Just a few plugin system tests with this example plugin.",
+	"package":"de.gidix.testDrive",
+	"author":"GIDIX",
+	"url":"http://labs.gidix.de",
+	"entryPoint":"TestDrivePlugin"
+}
