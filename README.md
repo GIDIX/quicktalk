@@ -26,6 +26,16 @@ After that create `lib/static/config.php`:
 	
 Change values depending on your needs but do NOT change the prefix.
 
+### Rewrites
+
+QuickTalk only needs one rewrite for error pages. This enables plugins to hook into it to create custom pages:
+
+#### nginx
+`error_page 404 /handler.php?page=$uri&$args;`
+
+#### Apache
+SOON
+
 ### Default user
 * Username: admin
 * Password: quicktalk
