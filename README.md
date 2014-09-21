@@ -26,6 +26,10 @@ After that create `lib/static/config.php`:
 	
 Change values depending on your needs but do NOT change the prefix.
 
+### Default user
+* Username: admin
+* Password: quicktalk
+
 ## Contribution
 
 You are invited to contribute to QuickTalk if you have experience with PHP OOP. Just create a fork and create Pull Requests for changes.
