@@ -115,7 +115,7 @@
 		 * @return string
 		 */
 		public static function getBaseURL() {
-			return '//' . $_SERVER['SERVER_NAME'];
+			return '//' . $_SERVER['SERVER_NAME'].'/'.dirname($_SERVER['PHP_SELF']);
 		}
 
 		/*
