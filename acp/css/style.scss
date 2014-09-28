@@ -46,7 +46,7 @@ $standard-font: Segoe UI, sans-serif;
 body {
 	font-family: $standard-font;
 	font-size: 14px;
-	background: #fff;
+	background: #f6f6f6;
 
 	@include mp0;
 }
@@ -129,10 +129,8 @@ b, strong {
 
 	.sidebar {
 		@include border-box;
-		@include cell(top, 184px);
-		padding-right: 20px;
+		@include cell(top, 212px);
 		padding-bottom: 32px;
-		border-right: 1px solid #eee;
 
 		nav {
 			padding-top: 20px;
@@ -141,27 +139,50 @@ b, strong {
 				@include ulreset;
 
 				li {
+					margin-right: -1px;
+					z-index: 2;
+					position: relative;
 
 					a {
 						display: block;
-						padding-left: 0px;
+						padding-left: 12px;
 						padding-right: 0px;
 						padding-top: 10px;
 						padding-bottom: 10px;
 						color: $accentedBG;
 						text-decoration: none;
+						transition: all 0.2s;
+						border-bottom: 1px solid #eaeaea;
 
 						&:hover, &.active {
 							font-weight: 600;
-							color: $accent;
+							color: #fff;
+							background: $accent;
 						}
+					}
+
+					&:first-child a {
+						border-top: 1px solid #eaeaea;
 					}
 
 					&.heading {
 						text-transform: uppercase;
 						margin-top: 32px;
+						margin-bottom: 2px;
 						font-weight: 600;
 						color: $lightBlue;
+						border-bottom: 2px solid $lightBlue;
+
+						padding: {
+							left: 0px;
+							bottom: 4px;
+						}
+
+						-webkit-user-select: none;
+						-ms-user-select: none;
+						-moz-user-select: none;
+						user-select: none;
+						cursor: default;
 					}
 
 					&.nothing {
@@ -178,20 +199,30 @@ b, strong {
 
 	.content {
 		@include cell(top, auto);
-		padding-bottom: 32px;
-		padding-left: 32px;
+
+		padding: {
+			left: 32px;
+			right: 32px;
+			bottom: 32px;
+		}
+
+		background: #fff;
+		border: 1px solid #eee;
+		border-top: 0;
 	}
 }
 
 footer {
 	width: 1000px;
 	margin: auto;
-	padding-top: 32px;
-	padding-bottom: 32px;
 	text-align: right;
-	color: #999;
+	color: #bbb;
 	font-size: 12px;
-	border-top: 1px solid #eee;
+
+	padding: {
+		top: 32px;
+		right: 32px;
+	}
 }
 
 /* Specifics */
