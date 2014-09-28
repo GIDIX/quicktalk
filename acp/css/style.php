@@ -4,6 +4,7 @@
 	function getSCSS($file) {
 		$uncompiled = basename($file) . '.scss';
 		$compiled = 'cache/' . basename($file) . '.css';
+		$scssContent = '';
 
 		if (!is_writable('cache')) {
 			die('/* Not writable: ' . $compiled . ' */');
@@ -16,11 +17,13 @@
 			try {
 				$return = file_put_contents($compiled, $scss->compile(file_get_contents($uncompiled)));
 			} catch (Exception $e) {
-				Functions::log(Functions::LOG_ERROR, $e->getMessage());
+				$scssContent .= "/*\n" . $e->getMessage() . "\n*/\n";
 			}
 		}
 
-		return file_get_contents($compiled);
+		$scssContent .= file_get_contents($compiled);
+
+		return $scssContent;
 	}
 
 	header("Content-Type: text/css");
