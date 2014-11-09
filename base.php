@@ -44,32 +44,12 @@
 	GeneralT::init();
 
 	// Classes
-	require LIB . 'base/Database.php';
-	require LIB . 'base/Config.php';
-	require LIB . 'base/Token.php';
-	require LIB . 'base/Functions.php';
-	require LIB . 'base/UserManager.php';
 	require LIB . 'base/InfoMessage.php';
 	require LIB . 'base/AdminInfoMessage.php';
-
-	require LIB . 'user/UserReadOnly.php';
-	require LIB . 'user/User.php';
-
 	require LIB . 'themes/scss/scss.inc.php';
-	require LIB . 'static/URLController.php';
-	require LIB . 'themes/Templates.php';
 
-	// ACP stuff
-	require LIB . 'acp/SettingsContainer.php';
-
-	// Plugin interfaces
-	require LIB . 'plugins/interfaces/PluginInterface.php';
-	require LIB . 'plugins/interfaces/PageCreator.php';
-
-	// Plugin Classes
-	require LIB . 'plugins/PluginManifest.php';
-	require LIB . 'plugins/Plugin.php';
-	require LIB . 'plugins/PluginHelper.php';
+	// Auto-Loader
+	require LIB . 'common/ClassLoader.php';
 
 	// Connect to database
 	$db = new Database($DBCRED['host'], $DBCRED['username'], $DBCRED['password'], $DBCRED['database']);

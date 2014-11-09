@@ -4,10 +4,6 @@
 
 	ForumT::init();
 
-	function __autoload($c) {
-		require LIB . 'forum/' . basename($c) . '.php';
-	}
-
 	$forum = Forum::fromID((int)$_GET['id']);
 
 	if (!$forum instanceof Forum) {
